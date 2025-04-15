@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  backend:
+    build: ./checklist/backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./checklist/backend:/app
+    restart: always
+
+  ui:
+    build: ./checklist/ui
+    ports:
+      - "8080:80"
+    volumes:
+      - ./checklist/ui:/usr/share/nginx/html
+    restart: always
